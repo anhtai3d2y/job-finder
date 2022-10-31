@@ -49,7 +49,7 @@ export default function TinyLogo() {
                 <Ionicons
                     name="logo-web-component"
                     size={20}
-                    color={colors.redColor}
+                    color={colors.blueColor}
                 />
                 <Text style={styles.title}>kmatch</Text>
             </View>

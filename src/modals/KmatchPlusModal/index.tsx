@@ -41,10 +41,13 @@ const KmatchPlusModal = ({visible, setVisible}) => {
                             <Ionicons
                                 name="logo-web-component"
                                 size={24}
-                                color={colors.redColor}
+                                color={colors.blueColor}
                             />
                             <Text
-                                style={[styles.text, {color: colors.redColor}]}>
+                                style={[
+                                    styles.text,
+                                    {color: colors.blueColor},
+                                ]}>
                                 Get Kmatch Plus®
                             </Text>
                         </View>
@@ -52,7 +55,7 @@ const KmatchPlusModal = ({visible, setVisible}) => {
                             <Text
                                 style={[
                                     styles.priceTextStyle,
-                                    {color: colors.redColor},
+                                    {color: colors.blueColor},
                                 ]}>
                                 23.393 VND
                             </Text>
@@ -71,7 +74,7 @@ const KmatchPlusModal = ({visible, setVisible}) => {
                                 <Ionicons
                                     name="logo-web-component"
                                     size={16}
-                                    color={colors.redColor}
+                                    color={colors.blueColor}
                                     style={{marginLeft: 5, marginRight: 5}}
                                 />
                             }
@@ -98,7 +101,7 @@ const KmatchPlusModal = ({visible, setVisible}) => {
                                     <MaterialCommunityIcons
                                         name="delete-empty"
                                         size={40}
-                                        color={colors.redColor}
+                                        color={colors.blueColor}
                                     />
                                 </View>
                                 <Text style={styles.title}>

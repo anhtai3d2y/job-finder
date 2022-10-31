@@ -164,7 +164,7 @@ export default function ChatScreen({route, navigation}) {
                         <Entypo
                             name="chevron-left"
                             size={30}
-                            color={colors.redColor}
+                            color={colors.blueColor}
                             style={{marginLeft: 10}}
                         />
                     </TouchableOpacity>
@@ -199,7 +199,7 @@ export default function ChatScreen({route, navigation}) {
                                 <View
                                     style={{
                                         borderWidth: 5,
-                                        borderColor: colors.redColor,
+                                        borderColor: colors.blueColor,
                                         borderRadius: 500,
                                         marginTop: 20,
                                         marginBottom: 40,
@@ -219,7 +219,7 @@ export default function ChatScreen({route, navigation}) {
                                     <MaterialCommunityIcons
                                         name="heart-settings"
                                         size={60}
-                                        color={colors.redColor}
+                                        color={colors.blueColor}
                                         style={{
                                             position: "absolute",
                                             alignSelf: "center",
@@ -253,7 +253,7 @@ export default function ChatScreen({route, navigation}) {
                                 <TouchableOpacity onPress={handleSayHello}>
                                     <View
                                         style={{
-                                            backgroundColor: colors.redColor,
+                                            backgroundColor: colors.blueColor,
                                             height: 35,
                                             width: 110,
                                             borderRadius: 30,
@@ -301,13 +301,13 @@ export default function ChatScreen({route, navigation}) {
                             {isLoadingSendMessageImage ? (
                                 <ActivityIndicator
                                     size="small"
-                                    color={colors.redColor}
+                                    color={colors.blueColor}
                                 />
                             ) : (
                                 <FontAwesome5
                                     name="image"
                                     size={24}
-                                    color={colors.redColor}
+                                    color={colors.blueColor}
                                 />
                             )}
                         </TouchableOpacity>
@@ -328,7 +328,7 @@ export default function ChatScreen({route, navigation}) {
                             <FontAwesome
                                 name="send"
                                 size={24}
-                                color={message ? colors.redColor : "#ccc"}
+                                color={message ? colors.blueColor : "#ccc"}
                             />
                         </TouchableOpacity>
                     </View>

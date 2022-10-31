@@ -73,7 +73,7 @@ export default function VerificationScreen({navigation}) {
                     <Ionicons
                         name="chevron-back"
                         size={40}
-                        color={colors.redColor}
+                        color={colors.blueColor}
                     />
                 </TouchableOpacity>
                 <Text style={styles.title}>{emailVerification}</Text>
@@ -90,11 +90,11 @@ export default function VerificationScreen({navigation}) {
             </View>
             <View style={styles.inputCode}>
                 {codeVerification.map((code, index) => {
-                    let color = index === current ? colors.redColor : "#ccc";
+                    let color = index === current ? colors.blueColor : "#ccc";
                     let backgroundColor = "#fff";
                     if (code || current > index) {
                         color = "#fff";
-                        backgroundColor = colors.redColor;
+                        backgroundColor = colors.blueColor;
                     }
                     if (index >= 6) return;
                     return (
@@ -154,7 +154,7 @@ export default function VerificationScreen({navigation}) {
             </View>
             <View style={{marginBottom: 50}}>
                 <TouchableOpacity onPress={handelSendVerificationCodeAgain}>
-                    <Text style={{fontSize: 20, color: colors.redColor}}>
+                    <Text style={{fontSize: 20, color: colors.blueColor}}>
                         Send again
                     </Text>
                 </TouchableOpacity>

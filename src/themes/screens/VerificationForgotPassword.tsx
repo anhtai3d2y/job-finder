@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     title: {
         marginLeft: 30,
         fontSize: 20,
-        color: colors.redColor,
+        color: colors.blueColor,
     },
     body: {
         alignItems: "center",
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
         width: width - 60,
         paddingHorizontal: 15,
         paddingVertical: 10,
-        borderColor: colors.redColor,
+        borderColor: colors.blueColor,
         borderWidth: 1,
         borderRadius: 15,
         marginBottom: 10,
@@ -91,9 +91,9 @@ const styles = StyleSheet.create({
         alignSelf: "center",
     },
     buttonOutline: {
-        backgroundColor: colors.redColor,
+        backgroundColor: colors.blueColor,
         marginTop: 5,
-        borderColor: colors.redColor,
+        borderColor: colors.blueColor,
         borderWidth: 2,
     },
     buttonOutlineText: {

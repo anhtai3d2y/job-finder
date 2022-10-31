@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         height: 60,
         borderRadius: 50,
         borderWidth: 2,
-        borderColor: colors.redColor,
+        borderColor: colors.blueColor,
     },
     text_section: {
         flexDirection: "column",
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
         shadowRadius: 4.65,
 
         elevation: 7,
-        color: colors.redColor,
+        color: colors.blueColor,
         fontWeight: "bold",
         fontSize: 12,
         marginLeft: 5,

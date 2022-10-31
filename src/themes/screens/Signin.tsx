@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     title: {
-        fontFamily: fonts.mainFontBold,
         marginTop: 40,
         marginBottom: 20,
         color: "#000",
@@ -23,7 +22,7 @@ const styles = StyleSheet.create({
         width: width - 60,
         paddingHorizontal: 15,
         paddingVertical: 10,
-        backgroundColor: colors.redOpacityColor,
+        backgroundColor: colors.blueOpacityColor,
         borderRadius: 15,
         marginTop: 15,
         height: 50,
@@ -43,9 +42,9 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     buttonOutline: {
-        backgroundColor: colors.redColor,
+        backgroundColor: colors.blueColor,
         marginTop: 5,
-        borderColor: colors.redColor,
+        borderColor: colors.blueColor,
         borderWidth: 2,
     },
     buttonOutlineText: {

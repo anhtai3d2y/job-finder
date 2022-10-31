@@ -145,7 +145,7 @@ export default function SettingProfileScreen({navigation}) {
                                     <Ionicons
                                         name="logo-web-component"
                                         size={24}
-                                        color={colors.redColor}
+                                        color={colors.blueColor}
                                     />
                                     <Text
                                         style={[
@@ -157,7 +157,7 @@ export default function SettingProfileScreen({navigation}) {
                                     <View
                                         style={[
                                             styles.badge,
-                                            {backgroundColor: colors.redColor},
+                                            {backgroundColor: colors.blueColor},
                                         ]}>
                                         <Text
                                             style={{
@@ -228,7 +228,7 @@ export default function SettingProfileScreen({navigation}) {
                     </Text>
                     <View style={styles.infoView}>
                         <Text>Email</Text>
-                        <Text style={{color: colors.redColor}}>
+                        <Text style={{color: colors.blueColor}}>
                             anhtai3d2y@gmail.com
                         </Text>
                     </View>

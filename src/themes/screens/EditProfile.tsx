@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     avatar: {
         marginVertical: 20,
         borderWidth: 2,
-        borderColor: colors.redColor,
+        borderColor: colors.blueColor,
         borderRadius: 100,
     },
     icon: {
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         position: "absolute",
         bottom: 0,
         right: 0,
-        backgroundColor: colors.redColor,
+        backgroundColor: colors.blueColor,
     },
     textInput: {
         flexDirection: "row",
@@ -42,14 +42,14 @@ const styles = StyleSheet.create({
     textField: {
         marginLeft: 10,
         fontSize: 18,
-        color: colors.redColor,
+        color: colors.blueColor,
     },
     text: {
         fontSize: 16,
     },
     input: {
         color: "black",
-        backgroundColor: colors.redOpacityColor,
+        backgroundColor: colors.blueOpacityColor,
         height: 40,
         fontSize: 18,
         width: width - 60,
@@ -87,9 +87,9 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     buttonOutline: {
-        backgroundColor: colors.redColor,
+        backgroundColor: colors.blueColor,
         marginTop: 5,
-        borderColor: colors.redColor,
+        borderColor: colors.blueColor,
         borderWidth: 2,
     },
     buttonOutlineText: {

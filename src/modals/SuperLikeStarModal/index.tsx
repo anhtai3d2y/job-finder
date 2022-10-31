@@ -79,7 +79,7 @@ const SuperLikeStarModal = ({visible, setVisible}) => {
                                 <Ionicons
                                     name="logo-web-component"
                                     size={16}
-                                    color={colors.redColor}
+                                    color={colors.blueColor}
                                     style={{marginLeft: 5, marginRight: 5}}
                                 />
                             }

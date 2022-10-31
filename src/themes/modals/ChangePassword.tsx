@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     button: {
-        backgroundColor: colors.redOpacityColor,
+        backgroundColor: colors.blueOpacityColor,
         width: width - 50,
         padding: 15,
         borderRadius: 40,
@@ -47,13 +47,13 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     buttonOutline: {
-        backgroundColor: colors.redColor,
+        backgroundColor: colors.blueColor,
         marginTop: 5,
-        borderColor: colors.redColor,
+        borderColor: colors.blueColor,
         borderWidth: 2,
     },
     buttonText: {
-        color: colors.redColor,
+        color: colors.blueColor,
         fontWeight: "600",
         fontSize: 16,
     },
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     textField: {
         marginLeft: 10,
         fontSize: 18,
-        color: colors.redColor,
+        color: colors.blueColor,
     },
     inputSelect: {
         color: "black",
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
         width: width - 60,
         paddingHorizontal: 15,
         paddingVertical: 10,
-        backgroundColor: colors.redOpacityColor,
+        backgroundColor: colors.blueOpacityColor,
         borderRadius: 15,
         marginTop: 15,
         height: 50,

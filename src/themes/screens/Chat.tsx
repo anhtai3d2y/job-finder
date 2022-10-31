@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     },
     headerImage: {
         borderWidth: 1,
-        borderColor: colors.redColor,
+        borderColor: colors.blueColor,
         borderRadius: 20,
         height: 35,
         width: 35,

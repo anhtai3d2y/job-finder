@@ -27,7 +27,7 @@ export default function ProfileScreen({navigation}) {
 
     const badge = {
         KmatchBasic: "superlike",
-        KmatchPlus: "redColor",
+        KmatchPlus: "blueColor",
         KmatchGold: "goldColor",
         KmatchPlatinum: "black",
     };
@@ -94,7 +94,7 @@ export default function ProfileScreen({navigation}) {
                     <View
                         style={{
                             borderWidth: 5,
-                            borderColor: colors.redColor,
+                            borderColor: colors.blueColor,
                             borderRadius: 500,
                             marginTop: 20,
                         }}>

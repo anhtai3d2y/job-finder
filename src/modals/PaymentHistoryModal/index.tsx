@@ -36,7 +36,7 @@ const PaymentHistoryModal = ({visible, setVisible}) => {
     const [payments, setPayments] = useState(paymentHistory);
 
     const colorPick = {
-        KmatchPlus: colors.redColor,
+        KmatchPlus: colors.blueColor,
         KmatchGold: colors.goldColor,
         kmatchPlatinum: colors.black,
         Boots1: colors.boots,
@@ -52,7 +52,7 @@ const PaymentHistoryModal = ({visible, setVisible}) => {
             <Ionicons
                 name="logo-web-component"
                 size={16}
-                color={colors.redColor}
+                color={colors.blueColor}
             />
         ),
         KmatchGold: (

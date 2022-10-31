@@ -255,7 +255,7 @@ export default function HomeScreen({navigation}) {
             <TinyLogo />
             <ActivityIndicator
                 size="large"
-                color={colors.redColor}
+                color={colors.blueColor}
                 style={styles.loading}
             />
             {users

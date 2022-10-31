@@ -173,7 +173,7 @@ export default function SignupProfileScreen() {
                             <MaterialCommunityIcons
                                 name="rename-box"
                                 size={24}
-                                color={colors.redColor}
+                                color={colors.blueColor}
                             />
                             <Text style={styles.textField}>Your Name</Text>
                         </View>
@@ -190,7 +190,7 @@ export default function SignupProfileScreen() {
                             <FontAwesome5
                                 name="transgender"
                                 size={24}
-                                color={colors.redColor}
+                                color={colors.blueColor}
                             />
                             <Text style={styles.textField}>Gender</Text>
                         </View>
@@ -219,7 +219,7 @@ export default function SignupProfileScreen() {
                             <MaterialIcons
                                 name="today"
                                 size={24}
-                                color={colors.redColor}
+                                color={colors.blueColor}
                             />
                             <Text style={styles.textField}>Birthday</Text>
                         </View>
@@ -242,7 +242,7 @@ export default function SignupProfileScreen() {
                             <FontAwesome
                                 name="phone-square"
                                 size={24}
-                                color={colors.redColor}
+                                color={colors.blueColor}
                             />
                             <Text style={styles.textField}>Phone number</Text>
                         </View>
@@ -259,7 +259,7 @@ export default function SignupProfileScreen() {
                             <Entypo
                                 name="lock"
                                 size={24}
-                                color={colors.redColor}
+                                color={colors.blueColor}
                             />
                             <Text style={styles.textField}>Password</Text>
                         </View>
@@ -277,7 +277,7 @@ export default function SignupProfileScreen() {
                             <MaterialCommunityIcons
                                 name="form-textbox-password"
                                 size={24}
-                                color={colors.redColor}
+                                color={colors.blueColor}
                             />
                             <Text style={styles.textField}>
                                 Confirm password

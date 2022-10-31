@@ -49,7 +49,7 @@ export default function TopSuperlikeTab() {
                                     styles.user_info,
                                     {
                                         backgroundColor: item.isMe
-                                            ? colors.redOpacityColor
+                                            ? colors.blueOpacityColor
                                             : "#fff",
                                     },
                                 ]}>
@@ -76,7 +76,7 @@ export default function TopSuperlikeTab() {
                                         <Octicons
                                             name="feed-star"
                                             size={13}
-                                            color={colors.redColor}
+                                            color={colors.blueColor}
                                         />
                                         <Text style={styles.amountSuperlike}>
                                             {item.superlikes}

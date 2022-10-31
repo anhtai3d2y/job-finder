@@ -114,7 +114,7 @@ export default function VerificationForgotPasswordScreen({navigation}) {
                         <Ionicons
                             name="chevron-back"
                             size={40}
-                            color={colors.redColor}
+                            color={colors.blueColor}
                         />
                     </TouchableOpacity>
                     <Text style={styles.title}>{emailForgotpassword}</Text>
@@ -154,12 +154,12 @@ export default function VerificationForgotPasswordScreen({navigation}) {
                                 {codeVerification.map((code, index) => {
                                     let color =
                                         index === current
-                                            ? colors.redColor
+                                            ? colors.blueColor
                                             : "#ccc";
                                     let backgroundColor = "#fff";
                                     if (code || current > index) {
                                         color = "#fff";
-                                        backgroundColor = colors.redColor;
+                                        backgroundColor = colors.blueColor;
                                     }
                                     if (index >= 6) return;
                                     return (
@@ -228,7 +228,7 @@ export default function VerificationForgotPasswordScreen({navigation}) {
                                     <Text
                                         style={{
                                             fontSize: 20,
-                                            color: colors.redColor,
+                                            color: colors.blueColor,
                                             alignSelf: "center",
                                         }}>
                                         Send again

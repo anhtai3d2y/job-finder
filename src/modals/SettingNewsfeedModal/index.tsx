@@ -87,7 +87,7 @@ const SettingNewsfeedModal = ({visible, setVisible}) => {
                             <FontAwesome5
                                 name="transgender"
                                 size={24}
-                                color={colors.redColor}
+                                color={colors.blueColor}
                             />
                             <Text style={styles.textField}>Show Me</Text>
                         </View>
@@ -117,7 +117,7 @@ const SettingNewsfeedModal = ({visible, setVisible}) => {
                             <MaterialCommunityIcons
                                 name="map-marker-distance"
                                 size={24}
-                                color={colors.redColor}
+                                color={colors.blueColor}
                             />
                             <Text style={styles.textField}>
                                 Distance Preference
@@ -140,7 +140,7 @@ const SettingNewsfeedModal = ({visible, setVisible}) => {
                             <MaterialCommunityIcons
                                 name="timeline-minus"
                                 size={24}
-                                color={colors.redColor}
+                                color={colors.blueColor}
                             />
                             <Text style={styles.textField}>Min Age</Text>
                         </View>
@@ -167,7 +167,7 @@ const SettingNewsfeedModal = ({visible, setVisible}) => {
                                 <MaterialCommunityIcons
                                     name="timeline-plus"
                                     size={24}
-                                    color={colors.redColor}
+                                    color={colors.blueColor}
                                 />
                                 <Text style={styles.textField}>Max Age</Text>
                             </View>

@@ -155,7 +155,7 @@ export default function EditProfileScreen({navigation}) {
                             <MaterialCommunityIcons
                                 name="rename-box"
                                 size={24}
-                                color={colors.redColor}
+                                color={colors.blueColor}
                             />
                             <Text style={styles.textField}>Your Name</Text>
                         </View>
@@ -172,7 +172,7 @@ export default function EditProfileScreen({navigation}) {
                             <FontAwesome5
                                 name="transgender"
                                 size={24}
-                                color={colors.redColor}
+                                color={colors.blueColor}
                             />
                             <Text style={styles.textField}>Gender</Text>
                         </View>
@@ -201,7 +201,7 @@ export default function EditProfileScreen({navigation}) {
                             <MaterialIcons
                                 name="today"
                                 size={24}
-                                color={colors.redColor}
+                                color={colors.blueColor}
                             />
                             <Text style={styles.textField}>Birthday</Text>
                         </View>
@@ -224,7 +224,7 @@ export default function EditProfileScreen({navigation}) {
                             <FontAwesome
                                 name="phone-square"
                                 size={24}
-                                color={colors.redColor}
+                                color={colors.blueColor}
                             />
                             <Text style={styles.textField}>Phone number</Text>
                         </View>

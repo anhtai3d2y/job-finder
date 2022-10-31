@@ -14,9 +14,8 @@ const styles = StyleSheet.create({
         width: 109,
     },
     title: {
-        fontFamily: fonts.mainFont,
         fontSize: 50,
-        color: colors.redColor,
+        color: colors.blueColor,
         fontWeight: "700",
     },
 });

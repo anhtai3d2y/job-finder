@@ -76,7 +76,7 @@ const ChangePasswordModal = ({visible, setVisible}) => {
                             <MaterialCommunityIcons
                                 name="onepassword"
                                 size={24}
-                                color={colors.redColor}
+                                color={colors.blueColor}
                             />
                             <Text style={styles.textField}>Old password</Text>
                         </View>
@@ -92,7 +92,7 @@ const ChangePasswordModal = ({visible, setVisible}) => {
                             <Ionicons
                                 name="lock-closed"
                                 size={24}
-                                color={colors.redColor}
+                                color={colors.blueColor}
                             />
                             <Text style={styles.textField}>New password</Text>
                         </View>
@@ -114,7 +114,7 @@ const ChangePasswordModal = ({visible, setVisible}) => {
                                 <MaterialCommunityIcons
                                     name="form-textbox-password"
                                     size={24}
-                                    color={colors.redColor}
+                                    color={colors.blueColor}
                                 />
                                 <Text style={styles.textField}>
                                     Confirm new password

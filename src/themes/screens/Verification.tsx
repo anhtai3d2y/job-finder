@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     title: {
         marginLeft: 30,
         fontSize: 20,
-        color: colors.redColor,
+        color: colors.blueColor,
     },
     content: {
         marginTop: 20,
@@ -47,8 +47,8 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
     keyboard: {
-        marginTop: 50,
-        marginHorizontal: 35,
+        marginTop: 40,
+        marginHorizontal: 25,
         alignSelf: "flex-end",
         flex: 1,
         flexDirection: "row",

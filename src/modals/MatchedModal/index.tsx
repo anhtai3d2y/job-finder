@@ -62,7 +62,7 @@ const MatchedModal = ({
                                     <FontAwesome
                                         name="heart"
                                         size={24}
-                                        color={colors.redColor}
+                                        color={colors.blueColor}
                                     />
                                 </View>
                                 <Image
@@ -83,7 +83,7 @@ const MatchedModal = ({
                                     <FontAwesome
                                         name="heart"
                                         size={24}
-                                        color={colors.redColor}
+                                        color={colors.blueColor}
                                     />
                                 </View>
                                 <Image

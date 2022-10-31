@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     button: {
-        backgroundColor: colors.redOpacityColor,
+        backgroundColor: colors.blueOpacityColor,
         width: width - 50,
         padding: 15,
         borderRadius: 40,
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     buttonText: {
-        color: colors.redColor,
+        color: colors.blueColor,
         fontWeight: "600",
         fontSize: 16,
     },

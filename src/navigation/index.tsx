@@ -22,7 +22,7 @@ const toastConfig = {
     message: props => (
         <BaseToast
             {...props}
-            style={{borderLeftColor: colors.redColor}}
+            style={{borderLeftColor: colors.blueColor}}
             contentContainerStyle={{paddingHorizontal: 15}}
             text1Style={{
                 fontSize: 15,
@@ -84,13 +84,13 @@ export default function Routes() {
         <SafeAreaProvider>
             <ThemeProvider>
                 <NavigationContainer>
-                    {/* <StatusBar style="dark" />
-                    {token ? <AppStack /> : <StartStack />} */}
-                    <SafeAreaView style={{flex: 1}}>
+                    <StatusBar style="dark" />
+                    {token ? <AppStack /> : <StartStack />}
+                    {/* <SafeAreaView style={{flex: 1}}>
                         <Text>
                             Open up App.js to start working on your app!
                         </Text>
-                    </SafeAreaView>
+                    </SafeAreaView> */}
                     <StatusBar style="auto" />
                     <Toast config={toastConfig} />
                 </NavigationContainer>

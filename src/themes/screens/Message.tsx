@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         height: 60,
         borderRadius: 50,
         borderWidth: 2,
-        borderColor: colors.redColor,
+        borderColor: colors.blueColor,
     },
     text_section: {
         flexDirection: "column",

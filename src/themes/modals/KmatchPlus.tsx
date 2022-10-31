@@ -48,17 +48,17 @@ const styles = StyleSheet.create({
     buttonSayHello: {
         fontStyle: "italic",
         fontWeight: "bold",
-        backgroundColor: colors.redColor,
+        backgroundColor: colors.blueColor,
     },
     textHideModal: {
-        color: colors.redColor,
+        color: colors.blueColor,
         fontSize: 16,
         fontWeight: "bold",
     },
     buttonHideModal: {
         fontStyle: "italic",
         fontWeight: "bold",
-        backgroundColor: colors.redOpacityColor,
+        backgroundColor: colors.blueOpacityColor,
     },
 
     wrapper: {},
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         alignItems: "center",
         justifyContent: "center",
-        borderColor: colors.redColor,
+        borderColor: colors.blueColor,
         borderRadius: 20,
     },
     priceTextStyle: {

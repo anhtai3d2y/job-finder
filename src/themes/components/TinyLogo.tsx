@@ -71,9 +71,8 @@ const styles = StyleSheet.create({
     },
     title: {
         marginLeft: 5,
-        fontFamily: fonts.mainFont,
         fontSize: 24,
-        color: colors.redColor,
+        color: colors.blueColor,
         fontWeight: "700",
     },
     bootsTime: {

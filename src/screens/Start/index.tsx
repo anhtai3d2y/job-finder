@@ -31,7 +31,7 @@ export default function StartScreen({navigation}) {
                     style={styles.button}>
                     <Text style={styles.buttonText}>Create an account</Text>
                 </TouchableOpacity>
-                <Text style={{color: colors.redColor, fontWeight: "600"}}>
+                <Text style={{color: colors.blueColor, fontWeight: "600"}}>
                     Or
                 </Text>
                 <TouchableOpacity

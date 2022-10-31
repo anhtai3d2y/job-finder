@@ -1,6 +1,6 @@
-import {Ionicons} from "@expo/vector-icons";
+import {AntDesign} from "@expo/vector-icons";
 import React from "react";
-import {Image, Text, View} from "react-native";
+import {Text, View} from "react-native";
 import colors from "../../constants/Colors";
 import styles from "../../themes/components/Logo";
 
@@ -11,12 +11,8 @@ export default function Logo() {
                 style={styles.logo}
                 source={require("../../assets/logo/kmatch.png")}
             /> */}
-            <Ionicons
-                name="logo-web-component"
-                size={80}
-                color={colors.redColor}
-            />
-            <Text style={styles.title}>kmatch</Text>
+            <AntDesign name="fork" size={80} color={colors.blueColor} />
+            <Text style={styles.title}>Job Finder</Text>
         </View>
     );
 }

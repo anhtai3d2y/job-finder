@@ -38,7 +38,7 @@ export default function SwiperSlide({navigation}) {
                     <Ionicons
                         name="logo-web-component"
                         size={16}
-                        color={colors.redColor}
+                        color={colors.blueColor}
                         style={{marginLeft: 5, marginRight: 5}}
                     />
                 }
@@ -96,9 +96,9 @@ export default function SwiperSlide({navigation}) {
                         <Ionicons
                             name="logo-web-component"
                             size={24}
-                            color={colors.redColor}
+                            color={colors.blueColor}
                         />
-                        <Text style={[styles.text, {color: colors.redColor}]}>
+                        <Text style={[styles.text, {color: colors.blueColor}]}>
                             Kmatch Plus®
                         </Text>
                     </View>
@@ -111,7 +111,7 @@ export default function SwiperSlide({navigation}) {
                         <Text
                             style={[
                                 styles.textButton,
-                                {color: colors.redColor},
+                                {color: colors.blueColor},
                             ]}>
                             GET KMATCH PLUS®
                         </Text>
@@ -171,7 +171,7 @@ export default function SwiperSlide({navigation}) {
                         <Ionicons
                             name="logo-web-component"
                             size={24}
-                            color={colors.redColor}
+                            color={colors.blueColor}
                         />
                         <Text style={[styles.text, {color: colors.black}]}>
                             Upgrade Your Love Life
@@ -182,7 +182,7 @@ export default function SwiperSlide({navigation}) {
                             <Ionicons
                                 name="logo-web-component"
                                 size={24}
-                                color={colors.redColor}
+                                color={colors.blueColor}
                             />
                         </View>
                         <View style={styles.roundIcon}>
