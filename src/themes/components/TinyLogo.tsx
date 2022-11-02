@@ -46,49 +46,18 @@ const styles = StyleSheet.create({
     },
     logoContainer: {
         flexDirection: "row",
-    },
-    bootsTimeContainer: {
-        position: "absolute",
-        right: 0,
-        flexDirection: "row",
-        justifyContent: "center",
         alignItems: "center",
-    },
-    amountStar: {
-        marginLeft: 5,
-        color: colors.superlike,
-        fontWeight: "bold",
-        fontSize: 12,
-    },
-    amountBoots: {
-        color: colors.boots,
-        fontWeight: "bold",
-        fontSize: 12,
     },
     logo: {
         height: 22,
         width: 24,
+        fontWeight: "500",
     },
     title: {
         marginLeft: 5,
-        fontSize: 24,
+        fontSize: 20,
         color: colors.blueColor,
-        fontWeight: "700",
-    },
-    bootsTime: {
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 3,
-        },
-        shadowOpacity: 0.29,
-        shadowRadius: 4.65,
-
-        elevation: 7,
-        color: colors.like,
-        marginRight: 2,
-        fontWeight: "bold",
-        fontSize: 12,
+        fontWeight: "500",
     },
 });
 

@@ -7,10 +7,6 @@ import styles from "../../themes/components/Logo";
 export default function Logo() {
     return (
         <View style={styles.container}>
-            {/* <Image
-                style={styles.logo}
-                source={require("../../assets/logo/kmatch.png")}
-            /> */}
             <AntDesign name="fork" size={80} color={colors.blueColor} />
             <Text style={styles.title}>Job Finder</Text>
         </View>

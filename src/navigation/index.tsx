@@ -91,7 +91,7 @@ export default function Routes() {
                             Open up App.js to start working on your app!
                         </Text>
                     </SafeAreaView> */}
-                    <StatusBar style="auto" />
+                    {/* <StatusBar style="auto" /> */}
                     <Toast config={toastConfig} />
                 </NavigationContainer>
             </ThemeProvider>
