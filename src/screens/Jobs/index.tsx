@@ -26,6 +26,7 @@ export default function JobScreen({route, navigation}) {
 
     useEffect(() => {
         setListJobs(jobs);
+        console.log("jobs: ", jobs);
     }, [jobs]);
     return (
         <View style={styles.container}>

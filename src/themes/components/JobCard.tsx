@@ -46,6 +46,15 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         padding: 5,
     },
+    career: {
+        marginTop: 10,
+        borderWidth: 2,
+        borderColor: colors.boots,
+        width: "90%",
+        borderRadius: 10,
+        padding: 10,
+        alignSelf: "center",
+    },
 });
 
 export default styles;

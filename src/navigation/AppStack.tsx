@@ -24,7 +24,7 @@ import colors from "../constants/Colors";
 import JobScreen from "../screens/Jobs";
 import ApplicationScreen from "../screens/Application";
 import SaveJobScreen from "../screens/SaveJob";
-import JobDetailScreen from "../screens/JobDetail/index.tsx";
+import JobDetailScreen from "../screens/JobDetail";
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
