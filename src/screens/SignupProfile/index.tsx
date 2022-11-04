@@ -33,8 +33,6 @@ export default function SignupProfileScreen() {
     const emailVerification = useStore(state => state.emailVerification);
     const isSignupSuccess = useStore(state => state.isSignupSuccess);
     const loginEmail = useStore(state => state.loginEmail);
-    const latitude = useStore(state => state.latitude);
-    const longitude = useStore(state => state.longitude);
 
     useEffect(() => {
         if (isSignupSuccess) {
@@ -69,10 +67,6 @@ export default function SignupProfileScreen() {
 
     const showDatepicker = () => {
         showMode("date");
-    };
-
-    const showTimepicker = () => {
-        showMode("time");
     };
 
     const [image, setImage] = useState({
@@ -126,14 +120,13 @@ export default function SignupProfileScreen() {
         } else {
             signup(
                 createFormData(image, {
-                    email: emailVerification,
+                    email: "emailVerification",
                     name: name,
                     password: password,
                     gender: gender,
                     phonenumber: phonenumber,
                     birthday: birthday,
-                    latitude: latitude,
-                    longitude: longitude,
+                    role: "Candidate",
                 }),
             );
         }
@@ -154,7 +147,6 @@ export default function SignupProfileScreen() {
         Object.keys(body).forEach(key => {
             data.append(key, body[key]);
         });
-
         return data;
     };
     return (

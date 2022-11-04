@@ -109,6 +109,7 @@ const createAuth: StoreSlice<LoginState> = (set, get) => ({
     },
     signup: async body => {
         try {
+            console.log("body: ", body);
             set({
                 isSignupLoading: true,
             });
@@ -116,6 +117,7 @@ const createAuth: StoreSlice<LoginState> = (set, get) => ({
                 API_URL + EndpointApi.signup,
                 body,
             );
+            console.log("res: ", res);
             set({
                 isSignupSuccess: true,
                 isSignupLoading: false,

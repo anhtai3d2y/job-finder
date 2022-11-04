@@ -41,7 +41,8 @@ export default function EditProfileScreen({navigation}) {
     const [birthday, setBirthday] = useState(userProfile.birthday);
     const [date, setDate] = useState(new Date(userProfile.birthday));
     const [phonenumber, setPhonenumber] = useState(userProfile.phonenumber);
-
+    const [mode, setMode] = useState("date");
+    const [show, setShow] = useState(false);
     const [image, setImage] = useState({
         uri: userProfile.avatar.secureURL,
     });
@@ -61,6 +62,24 @@ export default function EditProfileScreen({navigation}) {
         if (!result.cancelled) {
             setImage(result);
         }
+    };
+
+    const onChange = (event, selectedDate) => {
+        const currentDate = selectedDate;
+        setShow(false);
+        setDate(currentDate);
+    };
+
+    const showMode = currentMode => {
+        if (Platform.OS === "android") {
+            setShow(false);
+            // for iOS, add a button that closes the picker
+        }
+        setMode(currentMode);
+    };
+
+    const showDatepicker = () => {
+        showMode("date");
     };
 
     const onChangeBirthday = (event: object, selectedDate) => {
@@ -197,28 +216,35 @@ export default function EditProfileScreen({navigation}) {
                                 {gender}
                             </Text>
                         )}
-                        <View style={styles.textInput}>
-                            <MaterialIcons
-                                name="today"
-                                size={24}
-                                color={colors.blueColor}
-                            />
-                            <Text style={styles.textField}>Birthday</Text>
-                        </View>
+                        <TouchableOpacity onPress={() => setShow(true)}>
+                            <View style={styles.textInput}>
+                                <MaterialIcons
+                                    name="today"
+                                    size={24}
+                                    color={colors.blueColor}
+                                />
+                                <Text
+                                    style={styles.textField}
+                                    onPress={showDatepicker}>
+                                    Birthday
+                                </Text>
+                            </View>
+                        </TouchableOpacity>
                         <View
                             style={{
                                 width: width,
                                 marginLeft: 120,
                                 marginVertical: 10,
                             }}>
-                            <DateTimePicker
-                                testID="dateTimePicker"
-                                value={date}
-                                mode={"date"}
-                                maximumDate={new Date()}
-                                is24Hour={true}
-                                onChange={onChangeBirthday}
-                            />
+                            {show && (
+                                <DateTimePicker
+                                    testID="dateTimePicker"
+                                    value={date}
+                                    mode={mode}
+                                    is24Hour={true}
+                                    onChange={onChange}
+                                />
+                            )}
                         </View>
                         <View style={styles.textInput}>
                             <FontAwesome

@@ -1,4 +1,5 @@
 import {
+    Feather,
     FontAwesome,
     Ionicons,
     MaterialCommunityIcons,
@@ -19,6 +20,10 @@ import RankingScreen from "../screens/Ranking";
 import SettingProfileScreen from "../screens/SettingProfile";
 import useStore from "../stores/store";
 import * as WebBrowser from "expo-web-browser";
+import colors from "../constants/Colors";
+import JobScreen from "../screens/Jobs";
+import ApplicationScreen from "../screens/Application";
+import SaveJobScreen from "../screens/SaveJob";
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -112,6 +117,41 @@ const ProfileStack = ({navigation}) => (
         />
     </Stack.Navigator>
 );
+
+const JobStack = ({navigation}) => (
+    <Stack.Navigator>
+        <Stack.Screen
+            name="Jobs"
+            component={JobScreen}
+            options={({route}) => ({
+                headerShown: false,
+            })}
+        />
+    </Stack.Navigator>
+);
+
+const ApplicationStack = ({navigation}) => (
+    <Stack.Navigator>
+        <Stack.Screen
+            name="Applications"
+            component={ApplicationScreen}
+            options={({route}) => ({
+                headerShown: false,
+            })}
+        />
+    </Stack.Navigator>
+);
+const SaveJobStack = ({navigation}) => (
+    <Stack.Navigator>
+        <Stack.Screen
+            name="SaveJob"
+            component={SaveJobScreen}
+            options={({route}) => ({
+                headerShown: false,
+            })}
+        />
+    </Stack.Navigator>
+);
 export default function AppStack() {
     const latitude = useStore(state => state.latitude);
     const longitude = useStore(state => state.longitude);
@@ -170,61 +210,43 @@ export default function AppStack() {
     return (
         <Tab.Navigator
             screenOptions={{
-                tabBarActiveTintColor: "#E94057",
+                tabBarActiveTintColor: colors.blueColor,
             }}>
             <Tab.Screen
-                name="HomeTab"
-                component={FeedStack}
+                name="JobTab"
+                component={JobStack}
                 options={({route}) => ({
                     headerShown: false,
                     tabBarShowLabel: false,
                     tabBarIcon: ({color, size}) => (
-                        <MaterialCommunityIcons
-                            name="cards"
-                            color={color}
-                            size={size}
-                        />
+                        <Feather name="linkedin" color={color} size={size} />
                     ),
                 })}
             />
             <Tab.Screen
-                name="RankingTab"
-                component={RankingStack}
+                name="ApplicationTab"
+                component={ApplicationStack}
                 options={({route}) => ({
                     headerShown: false,
                     tabBarShowLabel: false,
-                    tabBarVisible: getTabBarVisibility(route),
                     tabBarIcon: ({color, size}) => (
                         <MaterialIcons
-                            name="bar-chart"
-                            size={size + 10}
+                            name="touch-app"
+                            size={size}
                             color={color}
                         />
                     ),
                 })}
             />
             <Tab.Screen
-                name="MatchesTab"
-                component={MatchesStack}
+                name="SaveJobTab"
+                component={SaveJobStack}
                 options={({route}) => ({
                     headerShown: false,
                     tabBarShowLabel: false,
-                    tabBarVisible: getTabBarVisibility(route),
                     tabBarIcon: ({color, size}) => (
-                        <Ionicons name="md-heart" color={color} size={size} />
-                    ),
-                })}
-            />
-            <Tab.Screen
-                name="MessagesTab"
-                component={MessageStack}
-                options={({route}) => ({
-                    headerShown: false,
-                    tabBarVisible: false,
-                    tabBarShowLabel: false,
-                    tabBarIcon: ({color, size}) => (
-                        <MaterialCommunityIcons
-                            name="comment-text"
+                        <Ionicons
+                            name="md-bookmark"
                             color={color}
                             size={size}
                         />

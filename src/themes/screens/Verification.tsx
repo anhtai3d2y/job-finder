@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     inputBlock: {
         borderColor: "#ccc",
         color: "#ccc",
-        fontSize: 40,
+        fontSize: 35,
         borderWidth: 1,
         width: 50,
         height: 50,
