@@ -13,6 +13,7 @@ import createThreads from "./zustandCreate/createThreads";
 import createUser from "./zustandCreate/createUser";
 import createVerification from "./zustandCreate/createVerification";
 import createJobs from "./zustandCreate/createJobs";
+import createApplications from "./zustandCreate/createApplication";
 
 const createRootSlice = (set: SetState<any>, get: GetState<any>) => ({
     ...createAuth(set, get),
@@ -29,6 +30,7 @@ const createRootSlice = (set: SetState<any>, get: GetState<any>) => ({
     ...createLocation(set, get),
     ...createProfiles(set, get),
     ...createJobs(set, get),
+    ...createApplications(set, get),
 });
 
 const useStore = create(createRootSlice);
