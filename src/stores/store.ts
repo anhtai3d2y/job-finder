@@ -4,13 +4,15 @@ import createDislikeUser from "./zustandCreate/createDislikeUser";
 import createLikeUser from "./zustandCreate/createLikeUser";
 import createLocation from "./zustandCreate/createLocation";
 import createMatches from "./zustandCreate/createMatches";
-import createMessages from "./zustandCreate/createMessages";
+import createProfiles from "./zustandCreate/createProfiles";
+import createMessages from "./zustandCreate/createProfiles";
 import createPaypal from "./zustandCreate/createPaypal";
 import createSuperlikeStar from "./zustandCreate/createSuperlikeStar";
 import createSuperlikeUser from "./zustandCreate/createSuperlikeUser";
 import createThreads from "./zustandCreate/createThreads";
 import createUser from "./zustandCreate/createUser";
 import createVerification from "./zustandCreate/createVerification";
+import createJobs from "./zustandCreate/createJobs";
 
 const createRootSlice = (set: SetState<any>, get: GetState<any>) => ({
     ...createAuth(set, get),
@@ -25,6 +27,8 @@ const createRootSlice = (set: SetState<any>, get: GetState<any>) => ({
     ...createMessages(set, get),
     ...createPaypal(set, get),
     ...createLocation(set, get),
+    ...createProfiles(set, get),
+    ...createJobs(set, get),
 });
 
 const useStore = create(createRootSlice);

@@ -4,21 +4,29 @@ import {View, Text, TouchableOpacity, Image, ScrollView} from "react-native";
 import TinyLogo from "../../components/TinyLogo";
 import colors from "../../constants/Colors";
 import useStore from "../../stores/store";
-import styles from "../../themes/screens/Profile";
 import shallow from "zustand/shallow";
+import styles from "../../themes/screens/Profile";
 
 export default function ProfileScreen({navigation}) {
     const getUserProfile = useStore(state => state.getUserProfile);
+    const getProfile = useStore(state => state.getProfile);
     const userProfile = useStore(state => state.userProfile, shallow);
+    const profile = useStore(state => state.profile, shallow);
     const [user, setUser] = useState({});
+    const [userPro, setUserPro] = useState({});
 
     useEffect(() => {
         getUserProfile();
+        getProfile();
     }, []);
 
     useEffect(() => {
         setUser(userProfile);
     }, [userProfile]);
+
+    useEffect(() => {
+        setUserPro(profile);
+    }, [profile]);
 
     const handleSetting = async () => {
         navigation.navigate("SettingProfile");
@@ -107,19 +115,19 @@ export default function ProfileScreen({navigation}) {
                         <View style={styles.detail}>
                             <Octicons name="location" size={24} color="black" />
                             <Text style={{marginLeft: 10, fontSize: 16}}>
-                                New York, United State
+                                {userPro.currentAddress || "No address"}
                             </Text>
                         </View>
                         <View style={styles.detail}>
                             <Feather name="phone" size={24} color="black" />
                             <Text style={{marginLeft: 10, fontSize: 16}}>
-                                0932062686
+                                {userProfile.phonenumber || "No phone number"}
                             </Text>
                         </View>
                         <View style={styles.detail}>
                             <Feather name="mail" size={24} color="black" />
                             <Text style={{marginLeft: 10, fontSize: 16}}>
-                                anhtai3d2y@gmail.com
+                                {userProfile.email || "No email"}
                             </Text>
                         </View>
                     </View>

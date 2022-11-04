@@ -29,6 +29,13 @@ const EndpointApi = {
     messages: "/messages",
     messagesImage: "/messages/image",
     paypal: "/paypal",
+
+    profiles: "/profiles",
+    certificates: "/certificates",
+    careers: "/careers",
+    jobs: "/jobs",
+    applications: "/applications",
+    saveJobs: "/save-jobs",
 };
 
 export {API_URL, EndpointApi};

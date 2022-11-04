@@ -24,6 +24,7 @@ import colors from "../constants/Colors";
 import JobScreen from "../screens/Jobs";
 import ApplicationScreen from "../screens/Application";
 import SaveJobScreen from "../screens/SaveJob";
+import JobDetailScreen from "../screens/JobDetail/index.tsx";
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -126,6 +127,15 @@ const JobStack = ({navigation}) => (
             options={({route}) => ({
                 headerShown: false,
             })}
+        />
+        <Stack.Screen
+            name="JobDetail"
+            component={JobDetailScreen}
+            options={{
+                headerShown: false,
+                tabBarVisible: false,
+                headerBackTitleVisible: false,
+            }}
         />
     </Stack.Navigator>
 );
