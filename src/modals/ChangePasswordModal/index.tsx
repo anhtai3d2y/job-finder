@@ -106,7 +106,7 @@ const ChangePasswordModal = ({visible, setVisible}) => {
                         />
                         <KeyboardAvoidingView
                             behavior={
-                                Platform.OS === "ios" ? "padding" : "height"
+                                Platform.OS === "android" ? "padding" : "height"
                             }
                             // style={{flex: 1}}
                         >

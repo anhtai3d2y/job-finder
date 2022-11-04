@@ -42,7 +42,7 @@ export default function SignupScreen({navigation}) {
                 <Logo />
                 <Text style={styles.title}>Sign up to continue</Text>
                 <KeyboardAvoidingView
-                    behavior={Platform.OS === "ios" ? "padding" : "height"}
+                    behavior={Platform.OS === "android" ? "padding" : "height"}
                     // style={{flex: 1}}
                 >
                     <TextInput

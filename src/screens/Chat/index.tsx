@@ -99,7 +99,7 @@ export default function ChatScreen({route, navigation}) {
             name: new Date() + id,
             type: photo.type + "/jpg",
             uri:
-                Platform.OS === "ios"
+                Platform.OS === "android"
                     ? photo.uri.replace("file://", "")
                     : photo.uri,
         });
@@ -154,7 +154,7 @@ export default function ChatScreen({route, navigation}) {
 
     return (
         <KeyboardAvoidingView
-            behavior={Platform.OS === "ios" ? "padding" : "height"}>
+            behavior={Platform.OS === "android" ? "padding" : "height"}>
             <View style={styles.container}>
                 <View style={styles.userHeader}>
                     <TouchableOpacity

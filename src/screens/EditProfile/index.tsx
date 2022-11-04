@@ -104,7 +104,7 @@ export default function EditProfileScreen({navigation}) {
             name: new Date() + name,
             type: photo.type + "/jpg",
             uri:
-                Platform.OS === "ios"
+                Platform.OS === "android"
                     ? photo.uri.replace("file://", "")
                     : photo.uri,
         });

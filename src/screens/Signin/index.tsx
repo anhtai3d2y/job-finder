@@ -33,7 +33,7 @@ export default function SigninScreen({navigation}) {
             <View style={styles.container}>
                 <Logo />
                 <KeyboardAvoidingView
-                    behavior={Platform.OS === "ios" ? "padding" : "height"}>
+                    behavior={Platform.OS === "android" ? "padding" : "height"}>
                     <TextInput
                         placeholder="Email"
                         placeholderTextColor="#ccc"

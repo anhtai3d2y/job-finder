@@ -45,11 +45,35 @@ export default function SignupProfileScreen() {
     const [name, setName] = useState("");
     const [isSelectGender, setIsSelectGender] = useState(false);
     const [gender, setGender] = useState("Male");
-    const [birthday, setBirthday] = useState("");
-    const [date, setDate] = useState(new Date());
+    const [birthday, setBirthday] = useState(new Date(Date.now()));
     const [phonenumber, setPhonenumber] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const [date, setDate] = useState(new Date());
+    const [mode, setMode] = useState("date");
+    const [show, setShow] = useState(false);
+
+    const onChange = (event, selectedDate) => {
+        const currentDate = selectedDate;
+        setShow(false);
+        setDate(currentDate);
+    };
+
+    const showMode = currentMode => {
+        if (Platform.OS === "android") {
+            setShow(false);
+            // for iOS, add a button that closes the picker
+        }
+        setMode(currentMode);
+    };
+
+    const showDatepicker = () => {
+        showMode("date");
+    };
+
+    const showTimepicker = () => {
+        showMode("time");
+    };
 
     const [image, setImage] = useState({
         uri: "https://scontent.fhan14-2.fna.fbcdn.net/v/t1.6435-9/76714112_2463775960534937_8739041008815177728_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=174925&_nc_ohc=l5Qta76QWE0AX-N4OV1&_nc_ht=scontent.fhan14-2.fna&oh=00_AT_-sjENN5Vk2-z0WY-N_OnPjXBKrSqPF-dFjY8WnJz9xg&oe=62D88D22",
@@ -122,7 +146,7 @@ export default function SignupProfileScreen() {
             name: new Date() + emailVerification,
             type: photo.type + "/jpg",
             uri:
-                Platform.OS === "ios"
+                Platform.OS === "android"
                     ? photo.uri.replace("file://", "")
                     : photo.uri,
         });
@@ -221,7 +245,13 @@ export default function SignupProfileScreen() {
                                 size={24}
                                 color={colors.blueColor}
                             />
-                            <Text style={styles.textField}>Birthday</Text>
+                            <TouchableOpacity onPress={() => setShow(true)}>
+                                <Text
+                                    style={styles.textField}
+                                    onPress={showDatepicker}>
+                                    Birthday
+                                </Text>
+                            </TouchableOpacity>
                         </View>
                         <View
                             style={{
@@ -229,14 +259,15 @@ export default function SignupProfileScreen() {
                                 marginLeft: 120,
                                 marginVertical: 10,
                             }}>
-                            <DateTimePicker
-                                testID="dateTimePicker"
-                                value={date}
-                                mode={"date"}
-                                maximumDate={new Date()}
-                                is24Hour={true}
-                                onChange={onChangeBirthday}
-                            />
+                            {show && (
+                                <DateTimePicker
+                                    testID="dateTimePicker"
+                                    value={date}
+                                    mode={mode}
+                                    is24Hour={true}
+                                    onChange={onChange}
+                                />
+                            )}
                         </View>
                         <View style={styles.textInput}>
                             <FontAwesome

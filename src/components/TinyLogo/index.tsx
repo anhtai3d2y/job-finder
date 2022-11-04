@@ -1,6 +1,6 @@
-import {AntDesign, Ionicons, MaterialIcons} from "@expo/vector-icons";
+import {Feather} from "@expo/vector-icons";
 import React, {useEffect, useState} from "react";
-import {Image, Text, View} from "react-native";
+import {Text, View} from "react-native";
 import shallow from "zustand/shallow";
 import colors from "../../constants/Colors";
 import useStore from "../../stores/store";
@@ -32,8 +32,8 @@ export default function TinyLogo() {
     return (
         <View style={styles.container}>
             <View style={styles.logoContainer}>
-                <AntDesign name="fork" size={20} color={colors.blueColor} />
-                <Text style={styles.title}>Job Finder</Text>
+                <Feather name="linkedin" size={20} color={colors.blueColor} />
+                <Text style={styles.title}>Jobee</Text>
             </View>
         </View>
     );
