@@ -12,21 +12,21 @@ import {
 import colors from "../../constants/Colors";
 import useStore from "../../stores/store";
 import {Picker} from "@react-native-picker/picker";
-import Toast from "react-native-toast-message";
 import styles from "../../themes/modals/SettingNewsfeedModal";
 import shallow from "zustand/shallow";
 import {ActivityIndicator} from "react-native-paper";
 
-const SettingNewsfeedModal = ({visible, setVisible}) => {
+const FilterJobModal = ({visible, setVisible}) => {
     const userProfile = useStore(state => state.userProfile, shallow);
+    const careers = useStore(state => state.careers, shallow);
+    const getCareers = useStore(state => state.getCareers);
+    const [arrCareer, setArrCareer] = useState(userProfile.career);
+
     const [gender, setGender] = useState(userProfile.genderShow);
     const [isSelectGender, setIsSelectGender] = useState(false);
     const [minAge, setMinAge] = useState(userProfile.minAge);
     const [maxAge, setMaxAge] = useState(userProfile.maxAge);
     const [distance, setDistance] = useState(userProfile.distance);
-    const getCareers = useStore(state => state.getCareers);
-    const careers = useStore(state => state.getCareers, shallow);
-    const [arrCareers, setArrCareers] = useState([]);
 
     const getUserNewsFeed = useStore(state => state.getUserNewsFeed);
     const getUserProfile = useStore(state => state.getUserProfile);
@@ -38,10 +38,8 @@ const SettingNewsfeedModal = ({visible, setVisible}) => {
     }, []);
 
     useEffect(() => {
-        setArrCareers(careers);
-        console.log("careers", careers);
+        setArrCareer(careers);
     }, [careers]);
-
     const handleSave = async () => {
         const handleUpdateProfile = async () => {
             await updateUserProfile(
@@ -95,7 +93,7 @@ const SettingNewsfeedModal = ({visible, setVisible}) => {
                 }}>
                 <View style={styles.centeredView}>
                     <View style={styles.modalView}>
-                        <Text style={styles.modalText}>Setting news feed</Text>
+                        <Text style={styles.modalText}>Filter jobs</Text>
                         <View style={styles.textInput}>
                             <FontAwesome5
                                 name="transgender"
@@ -227,4 +225,4 @@ const SettingNewsfeedModal = ({visible, setVisible}) => {
     );
 };
 
-export default SettingNewsfeedModal;
+export default FilterJobModal;

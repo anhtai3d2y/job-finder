@@ -33,7 +33,7 @@ export default function ApplicationScreen({route, navigation}) {
                             />
                         ))
                     ) : (
-                        <Text>No job application</Text>
+                        <Text style={{marginTop: 20}}>No job application</Text>
                     )}
                 </ScrollView>
             </View>

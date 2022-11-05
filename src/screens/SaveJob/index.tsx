@@ -33,7 +33,7 @@ export default function SaveJobScreen({route, navigation}) {
                             />
                         ))
                     ) : (
-                        <Text>No job saveJob</Text>
+                        <Text style={{marginTop: 20}}>No save job</Text>
                     )}
                 </ScrollView>
             </View>

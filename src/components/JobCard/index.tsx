@@ -32,13 +32,11 @@ export default function JobCard({route, navigation, job, status, statusApply}) {
         });
     };
     const handleSaveJob = () => {
-        console.log("save job: ", job._id);
         addSaveJob(job._id);
         getSaveJobs();
         getJobs();
     };
     const handleDeleteSaveJob = () => {
-        console.log("delete save job: ", job._id);
         deleteSaveJob(job._id);
         getSaveJobs();
         getJobs();

@@ -15,6 +15,7 @@ import createVerification from "./zustandCreate/createVerification";
 import createJobs from "./zustandCreate/createJobs";
 import createApplications from "./zustandCreate/createApplication";
 import createSaveJobs from "./zustandCreate/createSaveJob";
+import createCareers from "./zustandCreate/createCareer";
 
 const createRootSlice = (set: SetState<any>, get: GetState<any>) => ({
     ...createAuth(set, get),
@@ -33,6 +34,7 @@ const createRootSlice = (set: SetState<any>, get: GetState<any>) => ({
     ...createJobs(set, get),
     ...createApplications(set, get),
     ...createSaveJobs(set, get),
+    ...createCareers(set, get),
 });
 
 const useStore = create(createRootSlice);

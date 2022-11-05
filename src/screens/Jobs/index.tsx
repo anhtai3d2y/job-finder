@@ -7,6 +7,7 @@ import {useEffect, useState} from "react";
 import colors from "../../constants/Colors";
 import {Feather, Ionicons, Octicons} from "@expo/vector-icons";
 import JobCard from "../../components/JobCard";
+import FilterJobModal from "../../modals/FilterJobModal";
 export default function JobScreen({route, navigation}) {
     const getUserProfile = useStore(state => state.getUserProfile);
     const userProfile = useStore(state => state.userProfile, shallow);
@@ -14,6 +15,8 @@ export default function JobScreen({route, navigation}) {
     const getJobs = useStore(state => state.getJobs);
     const jobs = useStore(state => state.jobs, shallow);
     const [listJobs, setListJobs] = useState({});
+
+    const [filterJobModalVisible, setFilterJobModalVisible] = useState(false);
 
     useEffect(() => {
         getUserProfile();
@@ -28,6 +31,7 @@ export default function JobScreen({route, navigation}) {
         setListJobs(jobs);
     }, [jobs]);
     const handleGoToSearchJob = () => {
+        // setFilterJobModalVisible(true);
         navigation.navigate("SearchJob");
     };
     return (
@@ -58,9 +62,7 @@ export default function JobScreen({route, navigation}) {
             <TouchableOpacity onPress={handleGoToSearchJob}>
                 <View style={styles.searchContainer}>
                     <Feather name="search" size={24} color="black" />
-                    <Text style={styles.searchText}>
-                        Search for a job or company
-                    </Text>
+                    <Text style={styles.searchText}></Text>
                     <Ionicons
                         name="options-outline"
                         size={24}
@@ -85,10 +87,16 @@ export default function JobScreen({route, navigation}) {
                                 />
                             ))
                         ) : (
-                            <Text>No job Recommendation</Text>
+                            <Text style={{marginTop: 20}}>
+                                No job recommendation
+                            </Text>
                         )}
                     </ScrollView>
                 </View>
+                <FilterJobModal
+                    visible={filterJobModalVisible}
+                    setVisible={setFilterJobModalVisible}
+                />
             </View>
         </View>
     );
