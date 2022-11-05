@@ -9,12 +9,63 @@ import {
     View,
 } from "react-native";
 import shallow from "zustand/shallow";
-import TinyLogo from "../../../components/TinyLogo";
-import colors from "../../../constants/Colors";
-import useStore from "../../../stores/store";
-import styles from "../../../themes/screens/JobDetail";
+import TinyLogo from "../../components/TinyLogo";
+import colors from "../../constants/Colors";
+import useStore from "../../stores/store";
+import styles from "../../themes/screens/JobDetail";
 export default function JobDetailScreen({route, navigation}) {
-    const {id} = route.params;
+    const addSaveJob = useStore(state => state.addSaveJob);
+    const deleteSaveJob = useStore(state => state.deleteSaveJob);
+    const getSaveJobs = useStore(state => state.getSaveJobs);
+    const getJobs = useStore(state => state.getJobs);
+    const addApplication = useStore(state => state.addApplication);
+    const deleteApplication = useStore(state => state.deleteApplication);
+    const getApplications = useStore(state => state.getApplications);
+
+    const actionSave = {
+        false: (
+            <TouchableOpacity onPress={() => handleSaveJob()}>
+                <Feather name="bookmark" size={24} color={colors.blueColor} />
+            </TouchableOpacity>
+        ),
+        true: (
+            <TouchableOpacity onPress={() => handleDeleteSaveJob()}>
+                <Ionicons name="bookmark" size={24} color={colors.blueColor} />
+            </TouchableOpacity>
+        ),
+        disable: <View></View>,
+    };
+    const actionApply = {
+        false: (
+            <TouchableOpacity
+                style={[
+                    styles.button,
+                    styles.buttonOutline,
+                    styles.buttonApply,
+                    {marginTop: 30},
+                ]}
+                onPress={() => handleApply()}>
+                <Text style={styles.buttonOutlineText}>Apply</Text>
+            </TouchableOpacity>
+        ),
+        true: (
+            <TouchableOpacity
+                style={[
+                    styles.button,
+                    styles.buttonOutline,
+                    styles.buttonApply,
+                    {
+                        marginTop: 30,
+                        backgroundColor: colors.redColor,
+                        borderColor: colors.redColor,
+                    },
+                ]}
+                onPress={() => handleCancelApply()}>
+                <Text style={styles.buttonOutlineText}>Cancel</Text>
+            </TouchableOpacity>
+        ),
+    };
+    const {id, status, statusApply} = route.params;
     const getJobById = useStore(state => state.getJobById);
     const job = useStore(state => state.job, shallow);
     const [jobInfo, setJobInfo] = useState({});
@@ -24,14 +75,39 @@ export default function JobDetailScreen({route, navigation}) {
 
     useEffect(() => {
         setJobInfo(job);
-        console.log("job: ", job);
     }, [job]);
 
     const handleBack = () => {
         navigation.pop();
     };
     const handleSaveJob = () => {
-        console.log("save job: ", job._id);
+        addSaveJob(job._id);
+        getSaveJobs();
+        getJobs();
+        navigation.pop();
+        navigation.navigate("SaveJob");
+    };
+    const handleDeleteSaveJob = () => {
+        deleteSaveJob(job._id);
+        getSaveJobs();
+        getJobs();
+        navigation.pop();
+    };
+    const handleApply = () => {
+        deleteSaveJob(job._id);
+        addApplication(job._id);
+        getApplications();
+        getSaveJobs();
+        getJobs();
+        navigation.pop();
+        navigation.navigate("Applications");
+    };
+    const handleCancelApply = () => {
+        deleteApplication(job._id);
+        getApplications();
+        getSaveJobs();
+        getJobs();
+        navigation.pop();
     };
     return (
         <View style={styles.container}>
@@ -46,15 +122,7 @@ export default function JobDetailScreen({route, navigation}) {
                         />
                     </TouchableOpacity>
                 </View>
-                <View>
-                    <TouchableOpacity onPress={handleSaveJob}>
-                        <Feather
-                            name="bookmark"
-                            size={24}
-                            color={colors.blueColor}
-                        />
-                    </TouchableOpacity>
-                </View>
+                <View>{actionSave[status]}</View>
             </View>
             <View style={styles.content}>
                 <ScrollView>
@@ -106,15 +174,7 @@ export default function JobDetailScreen({route, navigation}) {
                             </View>
                         </View>
                     </View>
-                    <TouchableOpacity
-                        style={[
-                            styles.button,
-                            styles.buttonOutline,
-                            styles.buttonApply,
-                            {marginTop: 30},
-                        ]}>
-                        <Text style={styles.buttonOutlineText}>Apply</Text>
-                    </TouchableOpacity>
+                    {actionApply[statusApply]}
                 </ScrollView>
             </View>
         </View>

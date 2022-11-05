@@ -26,6 +26,7 @@ const colors = {
     blueColor: "#246bfd",
     blueOpacityColor: "#e9f0ff",
     grayColor: "#f5f6fb",
+    redColor: "#e94057",
     // goldColor: "#af7c00",
     goldColor: "#c69d2d",
 };

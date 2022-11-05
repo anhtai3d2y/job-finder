@@ -3,6 +3,7 @@ import {ScrollView, Text, View} from "react-native";
 import shallow from "zustand/shallow";
 import JobCard from "../../components/JobCard";
 import TinyLogo from "../../components/TinyLogo";
+import {height} from "../../constants/Layout";
 import useStore from "../../stores/store";
 import styles from "../../themes/screens/Job";
 export default function ApplicationScreen({route, navigation}) {
@@ -15,18 +16,19 @@ export default function ApplicationScreen({route, navigation}) {
 
     useEffect(() => {
         setApplicationInfo(applications);
-        console.log("applications: ", applications);
     }, [applications]);
     return (
         <View style={styles.container}>
             <TinyLogo />
-            <View>
-                <ScrollView>
+            <View style={{height: height * 0.84}}>
+                <ScrollView style={{height: height}}>
                     {applicationInfo && applicationInfo.length > 0 ? (
                         applicationInfo.map((application, index) => (
                             <JobCard
                                 key={application._id}
                                 job={application.jobs}
+                                status={"disable"}
+                                statusApply={"true"}
                                 navigation={navigation}
                             />
                         ))

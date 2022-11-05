@@ -8,6 +8,8 @@ export interface SaveJobsState {
     isLoadingSaveJobs: boolean;
     getSaveJobs: () => void;
     getSaveJobById: (id: string) => void;
+    addSaveJob: (jobId: string) => void;
+    deleteSaveJob: (jobId: string) => void;
 }
 
 const createSaveJobs: StoreSlice<SaveJobsState> = (set, get) => ({
@@ -44,6 +46,42 @@ const createSaveJobs: StoreSlice<SaveJobsState> = (set, get) => ({
             Toast.show({
                 type: "error",
                 text1: "Get Save Job Error!",
+                text2: error.response.data.message,
+            });
+        }
+    },
+    addSaveJob: async (jobId: string) => {
+        try {
+            const res = await axiosClient.post(API_URL + EndpointApi.saveJobs, {
+                jobId,
+            });
+            const data = res.data.data;
+            set({
+                saveJob: data,
+            });
+            return data;
+        } catch (error: any) {
+            Toast.show({
+                type: "error",
+                text1: "Add Save Job Error!",
+                text2: error.response.data.message,
+            });
+        }
+    },
+    deleteSaveJob: async (jobId: string) => {
+        try {
+            const res = await axiosClient.delete(
+                API_URL + EndpointApi.saveJobs + `/${jobId}`,
+            );
+            const data = res.data.data;
+            set({
+                saveJob: data,
+            });
+            return data;
+        } catch (error: any) {
+            Toast.show({
+                type: "error",
+                text1: "Delete Save Job Error!",
                 text2: error.response.data.message,
             });
         }

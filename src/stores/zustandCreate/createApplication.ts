@@ -8,6 +8,8 @@ export interface ApplicationsState {
     isLoadingApplications: boolean;
     getApplications: () => void;
     getApplicationById: (id: string) => void;
+    addApplication: (jobId: string) => void;
+    deleteApplication: (jobId: string) => void;
 }
 
 const createApplications: StoreSlice<ApplicationsState> = (set, get) => ({
@@ -46,6 +48,45 @@ const createApplications: StoreSlice<ApplicationsState> = (set, get) => ({
             Toast.show({
                 type: "error",
                 text1: "Get Application Error!",
+                text2: error.response.data.message,
+            });
+        }
+    },
+    addApplication: async (jobId: string) => {
+        try {
+            const res = await axiosClient.post(
+                API_URL + EndpointApi.applications,
+                {
+                    jobId,
+                },
+            );
+            const data = res.data.data;
+            set({
+                application: data,
+            });
+            return data;
+        } catch (error: any) {
+            Toast.show({
+                type: "error",
+                text1: "Add Application Error!",
+                text2: error.response.data.message,
+            });
+        }
+    },
+    deleteApplication: async (jobId: string) => {
+        try {
+            const res = await axiosClient.delete(
+                API_URL + EndpointApi.applications + `/${jobId}`,
+            );
+            const data = res.data.data;
+            set({
+                application: data,
+            });
+            return data;
+        } catch (error: any) {
+            Toast.show({
+                type: "error",
+                text1: "Delete Application Error!",
                 text2: error.response.data.message,
             });
         }

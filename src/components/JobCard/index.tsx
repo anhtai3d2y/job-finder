@@ -1,17 +1,47 @@
-import {Feather, FontAwesome, Ionicons} from "@expo/vector-icons";
+import {AntDesign, Feather, FontAwesome, Ionicons} from "@expo/vector-icons";
 import React from "react";
 import {Image, Text, TouchableOpacity, View} from "react-native";
 import colors from "../../constants/Colors";
+import useStore from "../../stores/store";
 import styles from "../../themes/components/JobCard";
 
-export default function JobCard({route, navigation, job}) {
+export default function JobCard({route, navigation, job, status, statusApply}) {
+    const addSaveJob = useStore(state => state.addSaveJob);
+    const deleteSaveJob = useStore(state => state.deleteSaveJob);
+    const getSaveJobs = useStore(state => state.getSaveJobs);
+    const getJobs = useStore(state => state.getJobs);
+    const actionSave = {
+        false: (
+            <TouchableOpacity onPress={() => handleSaveJob()}>
+                <Feather name="bookmark" size={24} color={colors.blueColor} />
+            </TouchableOpacity>
+        ),
+        true: (
+            <TouchableOpacity onPress={() => handleDeleteSaveJob()}>
+                <Ionicons name="bookmark" size={24} color={colors.blueColor} />
+            </TouchableOpacity>
+        ),
+        disable: <View></View>,
+    };
+
     const handleDetailJob = () => {
         navigation.navigate("JobDetail", {
             id: job._id,
+            status: status,
+            statusApply: statusApply,
         });
     };
     const handleSaveJob = () => {
         console.log("save job: ", job._id);
+        addSaveJob(job._id);
+        getSaveJobs();
+        getJobs();
+    };
+    const handleDeleteSaveJob = () => {
+        console.log("delete save job: ", job._id);
+        deleteSaveJob(job._id);
+        getSaveJobs();
+        getJobs();
     };
     return (
         <TouchableOpacity onPress={handleDetailJob}>
@@ -42,13 +72,7 @@ export default function JobCard({route, navigation, job}) {
                             </Text>
                         </View>
                     </View>
-                    <TouchableOpacity onPress={handleSaveJob}>
-                        <Feather
-                            name="bookmark"
-                            size={24}
-                            color={colors.blueColor}
-                        />
-                    </TouchableOpacity>
+                    {actionSave[status]}
                 </View>
                 <View style={styles.content}>
                     <Text style={styles.textAddress}>
@@ -75,6 +99,17 @@ export default function JobCard({route, navigation, job}) {
                         <View style={styles.roundInfo}>
                             <Text>{job.workType}</Text>
                         </View>
+                    </View>
+                    <View style={styles.career}>
+                        <Text>
+                            {job.careers.name}{" "}
+                            <AntDesign
+                                name="arrowright"
+                                size={16}
+                                color="black"
+                            />{" "}
+                            {job.careerdetails.name}
+                        </Text>
                     </View>
                 </View>
             </View>

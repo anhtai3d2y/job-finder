@@ -26,7 +26,6 @@ export default function JobScreen({route, navigation}) {
 
     useEffect(() => {
         setListJobs(jobs);
-        console.log("jobs: ", jobs);
     }, [jobs]);
     return (
         <View style={styles.container}>
@@ -77,6 +76,8 @@ export default function JobScreen({route, navigation}) {
                                 <JobCard
                                     key={job._id}
                                     job={job}
+                                    status={"false"}
+                                    statusApply={"false"}
                                     navigation={navigation}
                                 />
                             ))

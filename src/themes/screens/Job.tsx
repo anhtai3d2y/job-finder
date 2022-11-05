@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#ffffff",
         paddingTop: 40,
         paddingBottom: 240,
+        height: height,
     },
     avatarContainer: {
         flexDirection: "row",
