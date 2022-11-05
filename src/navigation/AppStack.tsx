@@ -25,6 +25,7 @@ import JobScreen from "../screens/Jobs";
 import ApplicationScreen from "../screens/Application";
 import SaveJobScreen from "../screens/SaveJob";
 import JobDetailScreen from "../screens/JobDetail";
+import SearchJobScreen from "../screens/SearchJob";
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -131,6 +132,15 @@ const JobStack = ({navigation}) => (
         <Stack.Screen
             name="JobDetail"
             component={JobDetailScreen}
+            options={{
+                headerShown: false,
+                tabBarVisible: false,
+                headerBackTitleVisible: false,
+            }}
+        />
+        <Stack.Screen
+            name="SearchJob"
+            component={SearchJobScreen}
             options={{
                 headerShown: false,
                 tabBarVisible: false,

@@ -27,6 +27,9 @@ export default function JobScreen({route, navigation}) {
     useEffect(() => {
         setListJobs(jobs);
     }, [jobs]);
+    const handleGoToSearchJob = () => {
+        navigation.navigate("SearchJob");
+    };
     return (
         <View style={styles.container}>
             <TinyLogo />
@@ -52,7 +55,7 @@ export default function JobScreen({route, navigation}) {
                     <Text style={styles.textInfo}>{user.name}</Text>
                 </View>
             </View>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={handleGoToSearchJob}>
                 <View style={styles.searchContainer}>
                     <Feather name="search" size={24} color="black" />
                     <Text style={styles.searchText}>
